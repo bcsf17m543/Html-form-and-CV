@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>task 2</title>
+  </head>
+  <body>
+    <form style="width: 30vw; margin: auto;margin-top: 7vh; border: 3px solid cornflowerblue; padding: 15px 5px 15px 5px; border-radius: 5px;">
+        <h3 style="text-align: center;">Sign Up</h3>
+    </br>
+        <div class="row">
+          <div class="col-md-6">
+            <input id="fname" type="text" class="form-control" placeholder="First name" oninvalid="invalidFName();" pattern="^[a-zA-Z]+$">
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Last name" oninvalid="invalidLName();" pattern="^[a-zA-Z]+$">
+          </div>
+        </div>
+    </br>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" oninvalid="invalidEmail();" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
+                <p><a href="#" style="color:dodgerblue;text-align: center;">I want to use my current email address. </a></p>            
+
+              </div>
+        </div>
+    </br>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password" >
+            </div>
+            
+        </div>
+    </br>
+    <div class="row">
+        <div class="col">
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>92</option>
+              <option>93</option>
+              <option>94</option>
+              <option>95</option>
+              <option>96</option>
+            </select>
+          </div>
+          <div class="col">
+            <input class="form-control" type="text" id="example-number-input" placeholder="Phone Number" oninvalid="invalidPhone();" pattern="^[0-9]{10}$">
+          </div>
+    </div>
+</br>
+          </div>
+          <div class="form-group row">
+            <label for="example-date-input" class="col-2 col-form-label">Date</label>
+            <div class="col-10">
+              <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="example-date-input" class="col-2 col-form-label">Gender</label>
+            <div class="col-10">
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Male</option>
+                    <option>Female</option>
+                  </select>
+            </div>
+          </div>
+          <div class="row">
+          </div class="col-md-12">
+          <p style="text-align: center;">By clicking Continue, you agree to our <a href="#" style="color:dodgerblue">Terms </a>and <a href="#" style="color:dodgerblue"> Privacy Policy.</a></p>
+        </br>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="mainFunc()">Continue</button>
+          </div>
+          
+      </form>
+
+      <script>
+          window.onload = function() {
+            //mainFunc();
+            };
+        $(document).ready(function(){
+          var date_input=$('input[name="date"]'); //our date input has the name "date"
+          var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+          var options={
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+          };
+          date_input.datepicker(options);
+        })
+        function mainFunc() 
+        {
+            //alert("Hello! I am an alert box!");
+        };
+        function invalidFName()
+        {
+            alert("Invalid First Name Format");
+        }
+        function invalidLName()
+        {
+            alert("Invalid Last Name Format");
+        }
+        function invalidEmail()
+        {
+            alert("Invalid Email Format");
+        }
+        function invalidPhone()
+        {
+            alert("Invalid Phone Number");
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
